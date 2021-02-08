@@ -14,6 +14,12 @@ Versions before 4.0.0 are available on [GitLab](https://gitlab.cc-asp.fraunhofer
 ### Fixed
 ### Security 
 
+## [5.0.0] - UNRELEASED
+-- New major version: Not backward compatible, requires adjustments by the connector developer. --
+### Added
+- If an error occurs while fetching a DAPS DAT, an exception is returned to the connector developer instead of just logging this error and sending an IDS message with invalid DAT entry. The message for which a DAT should be organized is no longer sent as a result.
+ Exception structure: DapsTokenManagerException > DapsConnectionException, DapsEmptyResponseException, ConnectorMissingCertExtensionException
+
 ## [4.0.4] - 2021-02-04
 ### Changed
 - Sending an automatic ErrorResponse/RejectionsMessage can now include the message-ID of the rejected message, if it was available
